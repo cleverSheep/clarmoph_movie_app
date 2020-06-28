@@ -1,8 +1,7 @@
-package com.clarmoph.clarmophmovies.model
+package com.clarmoph.clarmophmovies.model.network
 
-data class PosterImage(
+data class CoverImage(
     val large: String,
-    val medium: String,
     val original: String,
     val small: String,
     val tiny: String

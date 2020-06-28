@@ -1,4 +1,4 @@
-package com.clarmoph.clarmophmovies.model
+package com.clarmoph.clarmophmovies.model.network
 
 data class Attributes(
     val abbreviatedTitles: List<String>,

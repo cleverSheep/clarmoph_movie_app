@@ -39,9 +39,9 @@ class MainRepo @Inject constructor() {
             Function3 { animeTitles, popularAnime, topRomanceTitles ->
                 buildAnimeForYou(
                     AnimeForYou(
-                        animeTitles.data,
-                        popularAnime.data,
-                        topRomanceTitles.data
+                        Pair("All Anime Titles", animeTitles.data),
+                        Pair("Popular Anime Titles", popularAnime.data),
+                        Pair("Top Romance Anime", topRomanceTitles.data)
                     )
                 )
             })

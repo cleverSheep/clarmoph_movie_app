@@ -1,6 +1,6 @@
 package com.clarmoph.clarmophmovies.model
 
-data class Data(
+data class AnimeData(
     val attributes: Attributes,
     val id: String,
     val type: String

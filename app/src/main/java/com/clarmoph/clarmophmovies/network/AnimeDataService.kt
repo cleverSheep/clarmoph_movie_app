@@ -1,24 +1,34 @@
 package com.clarmoph.clarmophmovies.network
 
 import com.clarmoph.clarmophmovies.model.AnimeComplete
-import retrofit2.Call
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-class AnimeDataService() {
+class AnimeDataService {
     interface AnimeDataService {
-        @GET("episodes")
-        fun getAllEpisodes(): Call<AnimeComplete>
+        @GET("anime")
+        fun getAllAnimeTitles(): Single<AnimeComplete>
+
+        @GET("anime?sort=popularityRank")
+        fun getAllPopularAnimeTitles(): Single<AnimeComplete>
+
+        @GET("anime?filter[categories]=romance&sort=popularityRank")
+        fun getTopRomanceTitles(): Single<AnimeComplete>
     }
 
     companion object {
-        val retrofit = Retrofit.Builder()
+        private val retrofit = Retrofit.Builder()
             .baseUrl("https://kitsu.io/api/edge/")
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
-        val service = retrofit.create(AnimeDataService::class.java)
+        val service: AnimeDataService = retrofit.create(AnimeDataService::class.java)
     }
 }
+
 
 

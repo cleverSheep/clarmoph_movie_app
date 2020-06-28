@@ -1,16 +1,10 @@
 package com.clarmoph.clarmophmovies.repository
 
-import android.util.Log
-import com.clarmoph.clarmophmovies.model.AnimeComplete
-import com.clarmoph.clarmophmovies.model.AnimeData
+import com.clarmoph.clarmophmovies.model.network.AnimeComplete
 import com.clarmoph.clarmophmovies.model.ui.AnimeForYou
 import com.clarmoph.clarmophmovies.network.AnimeDataService
-import io.reactivex.Observable
 import io.reactivex.Single
-import io.reactivex.SingleSource
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.functions.BiFunction
 import io.reactivex.functions.Function3
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject

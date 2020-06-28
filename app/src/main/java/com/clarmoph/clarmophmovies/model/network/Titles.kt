@@ -1,4 +1,4 @@
-package com.clarmoph.clarmophmovies.model
+package com.clarmoph.clarmophmovies.model.network
 
 data class Titles(
     val en: String,

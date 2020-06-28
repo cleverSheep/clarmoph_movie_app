@@ -1,8 +1,7 @@
 package com.clarmoph.clarmophmovies.network
 
-import com.clarmoph.clarmophmovies.model.AnimeComplete
+import com.clarmoph.clarmophmovies.model.network.AnimeComplete
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

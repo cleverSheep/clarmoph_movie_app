@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 29
@@ -31,6 +32,22 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
+    project.android.buildTypes.all { buildType ->
+        buildType.javaCompileOptions.annotationProcessorOptions.arguments =
+                [
+                        validateEpoxyModelUsage      : String.valueOf(buildType.name == 'debug'),
+                        requireHashCodeInEpoxyModels : "true",
+                        requireAbstractEpoxyModels   : "true",
+                        implicitlyAddAutoModels      : "true",
+                        logEpoxyTimings              : "true",
+                        enableParallelEpoxyProcessing: "true",
+                ]
     }
 
 }
@@ -75,5 +92,10 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.5"
     kapt "androidx.room:room-compiler:2.2.5"
     testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    // Epoxy
+    implementation 'com.airbnb.android:epoxy:4.0.0-beta4'
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
+    kapt 'com.airbnb.android:epoxy-processor:3.9.0'
 
 }

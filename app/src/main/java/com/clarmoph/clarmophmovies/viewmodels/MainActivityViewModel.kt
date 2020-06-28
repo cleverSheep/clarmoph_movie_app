@@ -5,13 +5,10 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.clarmoph.clarmophmovies.model.AnimeComplete
 import com.clarmoph.clarmophmovies.model.ui.AnimeForYou
-import com.clarmoph.clarmophmovies.network.AnimeDataService
 import com.clarmoph.clarmophmovies.repository.MainRepo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableObserver
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 

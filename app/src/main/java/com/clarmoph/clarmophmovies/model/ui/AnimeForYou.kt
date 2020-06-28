@@ -1,6 +1,6 @@
 package com.clarmoph.clarmophmovies.model.ui
 
-import com.clarmoph.clarmophmovies.model.AnimeData
+import com.clarmoph.clarmophmovies.model.network.AnimeData
 
 data class AnimeForYou(
     val allAnimeTitles: List<AnimeData>,
